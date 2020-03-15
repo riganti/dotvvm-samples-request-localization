@@ -1,0 +1,10 @@
+﻿@viewModel RequestLocalizationSample.ViewModels.DefaultViewModel, RequestLocalizationSample
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h1>Current culture: {{value: Title}}</h1>
+
+    <p>Lang Route Parameter: <code>{{value: RouteLang}}</code></p>
+    <p>.AspNetCore.Culture Cookie: <code>{{value: CookieValue}}</code></p>
+    <p>Accept-Language header: <code>{{value: AcceptLanguage}}</code></p>
+</dot:Content>

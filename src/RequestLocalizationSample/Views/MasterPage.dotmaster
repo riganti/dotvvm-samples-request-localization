@@ -1,0 +1,29 @@
+﻿@viewModel RequestLocalizationSample.ViewModels.MasterPageViewModel, RequestLocalizationSample
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>RequestLocalizationSample</title>
+</head>
+<body>
+
+    <menu>
+        <li><dot:RouteLink Text="Go to '/'" RouteName="Default" Param-Lang="" /></li>
+        <li><dot:RouteLink Text="Go to '/cs'" RouteName="Default" Param-Lang="cs" /></li>
+        <li><dot:RouteLink Text="Go to '/en'" RouteName="Default" Param-Lang="en" /></li>
+        <li><dot:RouteLink Text="Go to '/de'" RouteName="Default" Param-Lang="de" /></li>
+        <li><dot:RouteLink Text="Go to '/pl'" RouteName="Default" Param-Lang="pl" /></li>
+    </menu>
+    <menu Validation.Enabled="false">
+        <li><dot:LinkButton Text="Clear cookie" Click="{command: ResetToDefaultLanguage()}" /></li>
+        <li><dot:LinkButton Text="Set cookie to 'cs'" Click="{command: SwitchLanguage("cs")}" /></li>
+        <li><dot:LinkButton Text="Set cookie to 'en'" Click="{command: SwitchLanguage("en")}" /></li>
+        <li><dot:LinkButton Text="Set cookie to 'de'" Click="{command: SwitchLanguage("de")}" /></li>
+        <li><dot:LinkButton Text="Set cookie to 'pl'" Click="{command: SwitchLanguage("pl")}" /></li>
+    </menu>
+
+	<dot:ContentPlaceHolder ID="MainContent" />
+
+</body>
+</html>
