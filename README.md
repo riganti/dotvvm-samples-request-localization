@@ -6,7 +6,11 @@ This sample demonstrates using **ASP.NET Core Request Localization** with [DotVV
 
 This sample shows the default settings - if the cookie with language is not present, the language is retrieved from the `Accept-Language` header. If the cookie `.AspNetCore.Culture` is set, the language from the cookie is used.
 
-If you need to store the language in the URL, you need to use your own `CustomRequestCultureProvider` that will try to obtain the language from the URL. Unfortunately, it is not possible to use `IDotvvmRequestContext` and the routing mechanism of DotVVM since the `RequestLocalization` middleware needs to run __before__ DotVVM and thus the route data is not present yet. 
+There is also a sample of `DotvvmRouteRequestCultureProvider` that can determine the language from the `Lang` route parameter. It is added as an initial provider, so the order of precedence is this:
+
+* Route parameter
+* Cookie
+* Accept-Language header
 
 You should not specify `config.DefaultCulture` in `DotvvmStartup` to prevent DotVVM from tampering with the request culture.
 
