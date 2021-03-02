@@ -53,10 +53,7 @@ namespace RequestLocalizationSample
             dotvvmConfiguration.AssertConfigurationIsValid();
 
             // use static files
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(env.WebRootPath)
-            });
+            app.UseStaticFiles();
         }
     }
 }
